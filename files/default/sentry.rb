@@ -25,6 +25,8 @@ module Raven
             evt.level = :error
           end
         end
+        # Use the node name, not the FQDN
+        evt.server_name = node.name
         Raven.send(evt)
       end
     end
