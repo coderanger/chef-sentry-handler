@@ -27,9 +27,3 @@ chef_handler "Raven::Chef::SentryHandler" do
   arguments [node]
   action :nothing
 end.run_action(node['sentry']['enabled'] ? :enable : :disable)
-
-ruby_block "killer" do
-  block do
-    raise "OMG"
-  end
-end
