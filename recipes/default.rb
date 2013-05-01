@@ -8,7 +8,7 @@ directory node["chef_handler"]["handler_path"] do
 end.run_action(:create)
 
 chef_gem "sentry-raven" do
-  version "0.2"
+  version "0.4.6"
 end
 
 handler_file = ::File.join(node["chef_handler"]["handler_path"], 'sentry.rb')
