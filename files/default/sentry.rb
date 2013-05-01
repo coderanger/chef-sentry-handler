@@ -5,6 +5,7 @@ module Raven
     class SentryHandler < ::Chef::Handler
       def initialize(node)
         Raven.configure(true) do |config|
+          config.ssl_verification = node['sentry']['verify_ssl']
           config.dsn = node['sentry']['dsn']
           config.logger = ::Chef::Log
           config.current_environment = node.chef_environment
