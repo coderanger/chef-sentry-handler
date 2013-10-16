@@ -17,7 +17,7 @@ Depends on the `chef_handler` cookbook to activate the error handler.
 Attributes
 ==========
 
-* `node['sentry']['dsn']` – **Required** The DSN for your Sentry server.
+* `node['sentry']['dsn']` - **Required** The DSN for your Sentry server.
 * `node['sentry']['enabled']` - Boolean to enable/disable the error reporter. Defaults to `true`.
 
 Usage
