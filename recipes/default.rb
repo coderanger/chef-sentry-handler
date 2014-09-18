@@ -10,7 +10,7 @@ end.run_action(:create)
 chef_gem "uuidtools"
 
 chef_gem "sentry-raven" do
-  version "0.9.4"
+  version node['sentry']['version']
 end
 
 handler_file = ::File.join(node["chef_handler"]["handler_path"], 'sentry.rb')
