@@ -11,5 +11,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef-sentry-handler::default]
+      - recipe[chef-sentry-handler-test::default]
     attributes:
