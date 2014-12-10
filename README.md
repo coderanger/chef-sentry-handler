@@ -23,7 +23,7 @@ Attributes
 Usage
 =====
 
-Simply add the `sentry-handler` recipe to your base role, preferably at the front
+Simply add the `chef-sentry-handler` recipe to your base role, preferably at the front
 of the run list to ensure any subsequent errors are reported, and then set the
 DSN in the node attributes.
 
