@@ -16,7 +16,7 @@ module Raven
       end
 
       def report
-        return if success?
+        return if success? || STDOUT.tty?
         Raven.logger.info "Logging run failure to Sentry server"
         if exception
           evt = Raven::Event.capture_exception(exception)
