@@ -1,31 +1,39 @@
-# Make sure the handlers folder exists
-directory node["chef_handler"]["handler_path"] do
-  owner "root"
-  group "root"
-  mode "755"
-  recursive true
-  action :nothing
-end.run_action(:create)
+#
+# Copyright 2012-2016, Noah Kantrowitz
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-chef_gem "uuidtools"
+include_recipe 'chef_handler::default'
 
-chef_gem "sentry-raven" do
-  version "0.9.4"
+chef_gem 'uuidtools' do
+  compile_time true
 end
 
-handler_file = ::File.join(node["chef_handler"]["handler_path"], 'sentry.rb')
+chef_gem 'sentry-raven' do
+  version node['sentry']['gem_version']
+  compile_time true
+end
 
-cookbook_file handler_file do
-  source "sentry.rb"
-  owner "root"
-  group "root"
-  mode "644"
+cookbook_file File.join(node['chef_handler']['handler_path'], 'sentry.rb') do
   action :nothing
+  source 'sentry.rb'
+  mode '0644'
 end.run_action(:create)
 
-chef_handler "Raven::Chef::SentryHandler" do
-  source handler_file
-  supports({:exception => true})
-  arguments [node]
+chef_handler 'Chef::Handler::Sentry' do
   action :nothing
-end.run_action(node['sentry']['enabled'] ? :enable : :disable)
+  source File.join(node['chef_handler']['handler_path'], 'sentry.rb')
+  arguments node['sentry']['options']
+  supports exception: true, report: true, start: false
+end.run_action(:enable)
