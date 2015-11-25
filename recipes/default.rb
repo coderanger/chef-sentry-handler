@@ -8,6 +8,8 @@ directory node["chef_handler"]["handler_path"] do
 end.run_action(:create)
 
 chef_gem "uuidtools"
+  version "2.1.5"
+end
 
 chef_gem "sentry-raven" do
   version "0.9.4"
