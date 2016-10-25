@@ -4,7 +4,7 @@ maintainer_email 'noah@coderanger.net'
 license 'Apache 2.0'
 description 'Report failed runs to Sentry.'
 long_description 'Report failed runs to Sentry.'
-version '2.0.0'
+version '2.0.1'
 
 depends 'chef_handler', '~> 2.0'
 

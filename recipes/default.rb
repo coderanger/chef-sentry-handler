@@ -21,6 +21,7 @@ chef_gem 'uuidtools' do
 end
 
 chef_gem 'sentry-raven' do
+  action :upgrade
   version node['sentry']['gem_version']
   compile_time true
 end
