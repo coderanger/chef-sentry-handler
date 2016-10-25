@@ -1,12 +1,21 @@
 # Chef Handler for Sentry
 
-A [Chef](https://www.chef.io) cookbook that configures and activates
-an error handler to send failures to
-a [Sentry](https://www.getsentry.com) server.
+Installs and configures a [Chef handler][0] for sending errors
+to [Sentry][1].
 
 ## Requirements
 
-Chef 12.1 or newer is required.
+Chef Client 12.1 or above.
+
+## Platforms
+
+This cookbook has been verified to work on the following platforms:
+
+- Ubuntu 14.04/16.04
+- RHEL (CentOS) 5/6/7
+- AIX 7.1
+- Solaris 11
+- Windows 2008r2/2012r2
 
 ## Usage
 
@@ -16,21 +25,8 @@ from a wrapper cookbook recipe:
 
 ``` ruby
 node.default['sentry']['dsn'] = 'https://xxxx:yyyy@sentry.corporate.com/1'
-include_recipe 'chef-handler-sentry::default'
+include_recipe 'chef-sentry-handler::default'
 ```
 
-## License
-
-Copyright 2012-2016, Noah Kantrowitz
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+[0]: https://docs.chef.io/handlers.html
+[1]: https://getsentry.com
