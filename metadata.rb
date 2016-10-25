@@ -1,6 +1,6 @@
 name 'chef-sentry-handler'
-maintainer 'Noah Kantrowitz'
-maintainer_email 'noah@coderanger.net'
+maintainer 'John Bellone'
+maintainer_email 'jbellone@bloomberg.net'
 license 'Apache 2.0'
 description 'Installs and configures a Chef handler for sending errors to Sentry.'
 long_description 'Installs and configures a Chef handler for sending errors to Sentry.'
@@ -9,5 +9,5 @@ chef_version '>= 12.1'
 
 depends 'chef_handler', '~> 2.0'
 
-issues_url 'https://github.com/coderanger/chef-sentry-handler/issues'
-source_url 'https://github.com/coderanger/chef-sentry-handler'
+issues_url 'https://github.com/johnbellone/chef-sentry-handler/issues'
+source_url 'https://github.com/johnbellone/chef-sentry-handler'
