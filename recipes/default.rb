@@ -17,10 +17,6 @@
 
 include_recipe 'chef_handler::default'
 
-chef_gem 'uuidtools' do
-  compile_time true
-end
-
 chef_gem 'sentry-raven' do
   action :upgrade
   version node['sentry']['gem_version']
