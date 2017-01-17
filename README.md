@@ -19,12 +19,12 @@ This cookbook has been verified to work on the following platforms:
 
 ## Usage
 
-All you need to do is set the `node['sentry']['dsn']` value and add
+All you need to do is set the `node['sentry']['options']['dsn']` value and add
 the default recipe of this cookbook to your run-list. You can do this
 from a wrapper cookbook recipe:
 
 ``` ruby
-node.default['sentry']['dsn'] = 'https://xxxx:yyyy@sentry.corporate.com/1'
+node.default['sentry']['options']['dsn'] = 'https://xxxx:yyyy@sentry.corporate.com/1'
 include_recipe 'chef-sentry-handler::default'
 ```
 
