@@ -19,4 +19,4 @@ default['sentry']['options']['dsn'] = nil
 default['sentry']['options']['ssl_verify'] = true
 default['sentry']['options']['environment'] = node.chef_environment
 
-default['sentry']['gem_version'] = '2.0.2'
+default['sentry']['gem_version'] = '2.7.2'
