@@ -4,7 +4,7 @@ maintainer_email 'jbellone@bloomberg.net'
 license 'Apache 2.0'
 description 'Installs and configures a Chef handler for sending errors to Sentry.'
 long_description 'Installs and configures a Chef handler for sending errors to Sentry.'
-version '2.1.0'
+version '2.2.0'
 chef_version '>= 12.1'
 
 depends 'chef_handler', '~> 2.0'
