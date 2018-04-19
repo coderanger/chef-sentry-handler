@@ -1,9 +1,13 @@
-name              "chef-sentry-handler"
-maintainer        "Noah Kantrowitz"
-maintainer_email  "noah@coderanger.net"
-license           "Apache 2.0"
-description       "Report failed runs to Sentry"
-long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           "1.0.0"
+name 'chef-sentry-handler'
+maintainer 'John Bellone'
+maintainer_email 'jbellone@bloomberg.net'
+license 'Apache 2.0'
+description 'Installs and configures a Chef handler for sending errors to Sentry.'
+long_description 'Installs and configures a Chef handler for sending errors to Sentry.'
+version '2.2.0'
+chef_version '>= 12.1'
 
-depends "chef_handler"
+depends 'chef_handler', '~> 2.0'
+
+issues_url 'https://github.com/johnbellone/chef-sentry-handler/issues'
+source_url 'https://github.com/johnbellone/chef-sentry-handler'
